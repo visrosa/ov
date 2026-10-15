@@ -252,8 +252,7 @@ Next, to install to $GOPATH/bin, run the make install command.
 make install
 ```
 
-Or, install it in a PATH location for other users to use
-(For example, in /usr/local/bin).
+Or, install it in a PATH location for other users to use (For example, in /usr/local/bin).
 
 ```console
 make
@@ -405,8 +404,7 @@ Specify the delimiter with `--column-delimiter`(default key is `d`) and set it t
 ov --column-delimiter "," --column-mode test.csv
 ```
 
-Regular expressions can be used for the `--column-delimiter`.
-Enclose in '/' when using regular expressions.
+Regular expressions can be used for the `--column-delimiter`. Enclose in '/' when using regular expressions.
 
 > [!TIP]
 > Use regex delimiters like `/\s+/` for variable whitespace or `/[,;]/` for multiple delimiter characters.
@@ -431,8 +429,7 @@ When in column-mode, pressing `F` will switch to fixed display for the selected 
 
 ###  4.6. <a name='column-rainbow-mode'></a>Column rainbow mode
 
-You can also color each column individually in column mode.
-Specify `--column-rainbow`(default key is `Ctrl+r`) in addition to the `--column-mode` option.
+You can also color each column individually in column mode. Specify `--column-rainbow`(default key is `Ctrl+r`) in addition to the `--column-mode` option.
 
 Color customization is possible. Please specify 7 or more colors in `config.yaml`.
 
@@ -503,22 +500,13 @@ Toggle word wrap with default key `Alt+w`.
 
 *Added in v0.55.0*
 
-`--break-indent` applies only in `-w=word` mode. Wrapped-line indentation can
-be set with `--break-indent` or the default key `Ctrl+Alt+n`. Use `0` for no
-indentation, a positive number for a fixed width, `L` to match the source line's
-leading whitespace, or `L+N`/`L-N` to adjust that indentation. `+N` and `-N` are
-shorthand for the relative forms.
+`--break-indent` applies only in `-w=word` mode. Wrapped-line indentation can be set with `--break-indent` or the default key `Ctrl+Alt+n`. Use `0` for no indentation, a positive number for a fixed width, `L` to match the source line's leading whitespace, or `L+N`/`L-N` to adjust that indentation. `+N` and `-N` are shorthand for the relative forms.
 
 ####  4.8.2. <a name='display-markers'></a>Display markers
 
 *Added in v0.55.0*
 
-Display markers can be enabled with `--sign-mode` or the default key
-`Ctrl+Alt+m`. The default value is `0` (no markers). Add the bit values to
-enable markers. When wrapping is enabled, `1` displays a break marker (`↳`) at
-the start of a wrapped line and `2` displays a continue marker (`↵`) where a
-line continues. When wrapping is disabled, `4` displays a truncation marker
-(`…`) when a line is cut off.
+Display markers can be enabled with `--sign-mode` or the default key `Ctrl+Alt+m`. The default value is `0` (no markers). Add the bit values to enable markers. When wrapping is enabled, `1` displays a break marker (`↳`) at the start of a wrapped line and `2` displays a continue marker (`↵`) where a line continues. When wrapping is disabled, `4` displays a truncation marker (`…`) when a line is cut off.
 
 | Value | Markers enabled | Display example |
 |-------|-----------------|-----------------|
@@ -531,15 +519,11 @@ line continues. When wrapping is disabled, `4` displays a truncation marker
 | `6`   | `↵` and `…`     | `line continues ↵` or `truncated line…` |
 | `7`   | `↳`, `↵`, and `…` | All applicable markers above |
 
-The `↳` and `↵` markers are shown when line wrapping is enabled; `…` is shown
-when wrapping is disabled and a line is truncated. Marker characters and styles
-can be customized with `BreakSign`, `ContinueSign`, `TruncSign` and their
-corresponding `Style` entries under `General` in the config file.
+The `↳` and `↵` markers are shown when line wrapping is enabled; `…` is shown when wrapping is disabled and a line is truncated. Marker characters and styles can be customized with `BreakSign`, `ContinueSign`, `TruncSign` and their corresponding `Style` entries under `General` in the config file.
 
 ###  4.9. <a name='alternate-rows'></a>Alternate-Rows
 
-Alternate row styles with the `--alternate-rows`(`-C`) (default key `C`) option
-The style can be set with [Style customization](#style-customization).
+Alternate row styles with the `--alternate-rows`(`-C`) (default key `C`) option The style can be set with [Style customization](#style-customization).
 
 ```console
 ov --alternate-rows test.csv
@@ -601,11 +585,9 @@ The start of the section can be adjusted with `--section-start`(default key `Ctr
 
 ![section.png](docs/section.png)
 
-The `--section-delimiter` is written in a regular expression (for example: "^#").
-(Line breaks are not included in matching lines).
+The `--section-delimiter` is written in a regular expression (for example: "^#"). (Line breaks are not included in matching lines).
 
-For example, if you specify "^diff" for a diff that contains multiple files,
-you can move the diff for each file.
+For example, if you specify "^diff" for a diff that contains multiple files, you can move the diff for each file.
 
 The number of lines in section-header can be changed.
 You can specify the number of lines using the `--section-header-num` option or key input(default key `F7`).
@@ -671,8 +653,7 @@ ov --follow-mode /var/log/syslog
 > [!TIP]
 > Use `--follow-name` instead of `--follow-mode` when files might be rotated (like log files). This ensures you continue following the new file even if the original is moved or deleted.
 
-You can specify the file name to follow with `--follow-name`(like `tail -F`).
-Monitor file names instead of file descriptors.
+You can specify the file name to follow with `--follow-name`(like `tail -F`). Monitor file names instead of file descriptors.
 
 ```console
 ov --follow-name /var/log/nginx/access.log
@@ -728,8 +709,7 @@ General:
 
 ###  4.14. <a name='exec-mode'></a>Exec mode
 
-Exec mode captures the output of a command and displays it in `ov`.
-It works similarly to `watch`, but with advanced paging features.
+Exec mode captures the output of a command and displays it in `ov`. It works similarly to `watch`, but with advanced paging features.
 
 Use the `--exec` (`-e`) option to run the command and display stdout/stderr separately.
 
@@ -747,8 +727,7 @@ Shows the stderr screen as soon as an error occurs, when used with `--follow-all
 ov --follow-all --exec -- make
 ```
 
-In exec mode (other than Windows) the output is opened by opening a `pty`.
-Therefore, the command is likely to be printed in color.
+In exec mode (other than Windows) the output is opened by opening a `pty`. Therefore, the command is likely to be printed in color.
 
 ```console
 ov --exec -- eza -l
@@ -763,9 +742,7 @@ ov --notify-eof --exec -- make
 
 ###  4.15. <a name='search'></a>Search
 
-Search by forward search `/` key(default) or the backward search `?` key(default).
-Search can be toggled between incremental search, regular expression search, and case sensitivity.
-Displayed when the following are enabled in the search input prompt:
+Search by forward search `/` key(default) or the backward search `?` key(default). Search can be toggled between incremental search, regular expression search, and case sensitivity. Displayed when the following are enabled in the search input prompt:
 
 |         Function          | display | (Default)key |     command option     |    config file     |
 |---------------------------|---------|--------------|------------------------|--------------------|
@@ -824,8 +801,7 @@ The command line option for this can be specified with `--non-match-filter`.
 ov --non-match-filter info /var/log/syslog
 ```
 
-If you specify both a `filter` option and the [Quit if one screen](#quit-if-one-screen) option,
-the command will display the results of the filter and then quit if the results fit on one screen.
+If you specify both a `filter` option and the [Quit if one screen](#quit-if-one-screen) option, the command will display the results of the filter and then quit if the results fit on one screen.
 
 ```console
 $ ps aux|ov -H1 --filter postgres --quit-if-one-screen
@@ -860,8 +836,7 @@ ls -alF|ov
 Mark the display position with the `m` key(default).
 The mark is decorated with `MarkLine` and `MarkStyleWidth`.
 
-Marks can be erased individually with the `M` key(default).
-It is also possible to delete all marks with the `ctrl + delete` key(default).
+Marks can be erased individually with the `M` key(default). It is also possible to delete all marks with the `ctrl + delete` key(default).
 
 The specified marks can be displayed in the mark list in the [Sidebar](#sidebar)(default key `alt + m`).
 
@@ -869,19 +844,13 @@ The specified marks can be displayed in the mark list in the [Sidebar](#sidebar)
 
 ####  4.17.1. <a name='mark-by-pattern'></a>mark by pattern
 
-You can use mark by pattern to mark all lines that match the search(default key `*`).
-This will enter pattern input mode and, when you press `Enter`, mark all lines
-that match the pattern.
+You can use mark by pattern to mark all lines that match the search(default key `*`). This will enter pattern input mode and, when you press `Enter`, mark all lines that match the pattern.
 
 Use `--mark-by-pattern` to mark matching lines when `ov` starts.
 
 ####  4.17.2. <a name='specifying-a-mark'></a>Specifying a mark
 
-Use the `>`next and `<`previous (default) key to move to the marked position.
-You can also enter mark specify mode with `,` (default) and select a mark by
-number. There are two input styles: enter the number directly, or enter a
-relative offset like `+N`/`-N` from the current mark. When you press `,`, the
-mark list sidebar opens automatically along with number input mode.
+Use the `>`next and `<`previous (default) key to move to the marked position. You can also enter mark specify mode with `,` (default) and select a mark by number. There are two input styles: enter the number directly, or enter a relative offset like `+N`/`-N` from the current mark. When you press `,`, the mark list sidebar opens automatically along with number input mode.
 
 ###  4.18. <a name='watch'></a>Watch
 
@@ -899,8 +868,7 @@ ov --watch 1 /proc/meminfo
 
 ###  4.19. <a name='mouse-support'></a>Mouse support
 
-The `ov` supports mouse input for text selection, scrolling, and other interactions.
-This can be disabled with the option `--disable-mouse` (default keys for toggling mouse support are `Ctrl+Alt+r`).
+The `ov` supports mouse input for text selection, scrolling, and other interactions. This can be disabled with the option `--disable-mouse` (default keys for toggling mouse support are `Ctrl+Alt+r`).
 
 If mouse support is enabled, tabs and line breaks will be interpreted correctly when copying.
 
@@ -916,9 +884,7 @@ ClipboardMethod: "OSC52"
 
 This method is useful in environments where `OSC52` is supported by the terminal.
 
-If your terminal does not support `OSC52`, or if you do not want to use `OSC52`,
-set `ClipboardMethod` to `system` to use [atotto/clipboard](https://github.com/atotto/clipboard)
-for clipboard operations.
+If your terminal does not support `OSC52`, or if you do not want to use `OSC52`, set `ClipboardMethod` to `system` to use [atotto/clipboard](https://github.com/atotto/clipboard) for clipboard operations.
 
 In Linux/Unix environments, this requires the `xclip` or `xsel` command.
 
@@ -977,8 +943,7 @@ General:
 
 **Horizontal Scroll Amount:**
 
-Command-line: --hscroll-width (e.g., --hscroll-width "20%" or --hscroll-width "10")
-Config file: Set HScrollWidth in the General section
+Command-line: --hscroll-width (e.g., --hscroll-width "20%" or --hscroll-width "10") Config file: Set HScrollWidth in the General section
 
 ```yaml
 General:
@@ -995,8 +960,7 @@ Enter multiple words (regular expressions) separated by spaces.
 
 For example, `error info warn debug` will color errors red, info cyan, warn yellow, and debug magenta.
 
-It can also be specified with the command line option `--multi-color`(`-M`)(default key `.`).
-For command line options, pass them separated by ,(comma).
+It can also be specified with the command line option `--multi-color`(`-M`)(default key `.`). For command line options, pass them separated by ,(comma).
 
 For example:
 
@@ -1033,12 +997,9 @@ The option is `--plain` (or `-p`) (default key `Ctrl+e`).
 
 ###  4.22. <a name='converter'></a>Converter
 
-Converter selects the engine to convert and display the text.
-Usually, the escape sequence is interpreted and displayed by `es` (default).
-`raw` displays as it is without interpreting the escape sequence.
+Converter selects the engine to convert and display the text. Usually, the escape sequence is interpreted and displayed by `es` (default). `raw` displays as it is without interpreting the escape sequence.
 
-You can specify the `--converter` option with `[es|raw|align]`,
-and you can also specify the `--raw`, `--align`([Align](#align)) option as a shortcut option.
+You can specify the `--converter` option with `[es|raw|align]`, and you can also specify the `--raw`, `--align`([Align](#align)) option as a shortcut option.
 
 > [!NOTE]
 > `raw` also displays the character string of the escape sequence,
@@ -1086,12 +1047,7 @@ Columns displayed by alignment are left-justified. Columns can be right-aligned 
 
 ###  4.24. <a name='jump-target'></a>Jump target
 
-You can specify the lines to be displayed in the search results.
-This function is similar to `--jump-target` of `less`.
-Positive numbers are displayed downwards by the number of lines from the top(1).
-Negative numbers are displayed up by the number of lines from the bottom(-1).
-. (dot) can be used to specify a percentage. .5 is the middle of the screen(.5).
-You can also specify a percentage, such as (50%).
+You can specify the lines to be displayed in the search results. This function is similar to `--jump-target` of `less`. Positive numbers are displayed downwards by the number of lines from the top(1). Negative numbers are displayed up by the number of lines from the bottom(-1). . (dot) can be used to specify a percentage. .5 is the middle of the screen(.5). You can also specify a percentage, such as (50%).
 
 This option can be specified with `--jump-target`(or `-j`) (default key `j`).
 
@@ -1106,8 +1062,7 @@ ov --section-delimiter "^#" --jump-target section README.md
 
 ###  4.25. <a name='view-mode'></a>View mode
 
-You can also use a combination of modes using the `--view-mode`(default key `p`) option.
-In that case, you can set it in advance and specify the combined mode at once.
+You can also use a combination of modes using the `--view-mode`(default key `p`) option. In that case, you can set it in advance and specify the combined mode at once.
 
 For example, if you write the following settings in ov.yaml,
  the csv mode will be set with `--view-mode csv`.
@@ -1172,8 +1127,7 @@ This is useful for checking predefined view modes and their configurations.
 
 ###  4.26. <a name='output-on-exit'></a>Output on exit
 
-`--exit-write`, `-X`(default key `Q`) option prints the current screen on exit.
-This looks like the display remains on the console after the ov is over.
+`--exit-write`, `-X`(default key `Q`) option prints the current screen on exit. This looks like the display remains on the console after the ov is over.
 
 By default, it outputs the amount of the displayed screen **with all decorations**, such as search highlights, as it appears on the screen.
 
@@ -1190,8 +1144,7 @@ IsWriteOriginal: true
 You can change how much is written using `--exit-write-before` and `--exit-write-after`(default key `Ctrl+q`).
 `--exit-write-before`
 
-`--exit-write-before` specifies the number of lines before the current position(top of screen).
-`--exit-write-before 3` will output from 3 lines before.
+`--exit-write-before` specifies the number of lines before the current position(top of screen). `--exit-write-before 3` will output from 3 lines before.
 
 `--exit-write-after` specifies the number of lines after the current position (top of screen).
 
@@ -1217,8 +1170,7 @@ Normally, you can resume from suspend by typing `fg`.
 suspended ov (use 'fg' to resume)
 ```
 
-On Windows or if the environment variable `OV_SUBSHELL` is set, `exit` instead of `fg`.
-The process actually starts a subshell without suspending.
+On Windows or if the environment variable `OV_SUBSHELL` is set, `exit` instead of `fg`. The process actually starts a subshell without suspending.
 
 ```console
 suspended ov (use 'exit' to resume)
@@ -1249,8 +1201,7 @@ This will open the current file in `vim` at the specified line number.
 
 If the file input is via a pipe, you can save it by pressing the `save buffer` (default `S`) key.
 
-This will put you in input mode, so enter the file name.
-Only the buffer currently in memory is saved.
+This will put you in input mode, so enter the file name. Only the buffer currently in memory is saved.
 
 ```ov:prompt
 (Save)file:savefile.txt
@@ -1281,8 +1232,7 @@ ov --ruler=2 README.md
 
 ###  4.32. <a name='redirect-output'></a>Redirect output
 
-By default, `ov` does not show the screen when output is redirected.
-To force display, use the `--force-screen` option:
+By default, `ov` does not show the screen when output is redirected. To force display, use the `--force-screen` option:
 
 ```console
 ov --force-screen filename > output.txt
@@ -1296,9 +1246,7 @@ Syntax highlighting and other styles (including those represented by escape sequ
 This is especially useful when `ov` is used as a pager from syntax-highlighting tools such as `bat`.
 Unlike [Plain](#plain), this feature does not remove all decoration at once; it lets you selectively suppress only the styles you do not want.
 
-After startup, press `o` (default key) to enter `Toggle styles:` input mode.
-In this mode, the sidebar shows a numbered list of available styles (indices start at 0).
-Specify styles by the numbers shown in the sidebar labels.
+After startup, press `o` (default key) to enter `Toggle styles:` input mode. In this mode, the sidebar shows a numbered list of available styles (indices start at 0). Specify styles by the numbers shown in the sidebar labels.
 
 * Use commas to select multiple items: `1,3,5`
 * Use hyphens for ranges: `4-9`
@@ -1310,8 +1258,7 @@ Special commands are also available in `Toggle styles:` input:
 * `a`: enable all styles
 * `i`: invert all styles
 
-You can combine special commands and numeric selections in one input.
-For example:
+You can combine special commands and numeric selections in one input. For example:
 
 * `o1-3` disables all styles, then enables styles 1 through 3
 * `i2` inverts all styles, then toggles style 2 again
@@ -1325,11 +1272,9 @@ The first chunk from the beginning to the 10,000th line is loaded into memory
 and never freed.
 Therefore, files with less than 10,000 lines do not change behavior.
 
-The `--memory-limit` option can be used to limit the chunks loaded into memory.
-Memory limits vary by file type.
+The `--memory-limit` option can be used to limit the chunks loaded into memory. Memory limits vary by file type.
 
-Also, go may use a lot of memory until the memory is freed by GC.
-Also consider setting the environment variable `GOMEMLIMIT`.
+Also, go may use a lot of memory until the memory is freed by GC. Also consider setting the environment variable `GOMEMLIMIT`.
 
 ```console
 export GOMEMLIMIT=100MiB
@@ -1360,10 +1305,7 @@ You can also use the `--memory-limit-file` option and the `MemoryLimitFile` sett
 
 Non-seekable files and pipes cannot be read again, so they must exist in memory.
 
-If you specify the upper limit of chunks with `--memory-limit` or `MemoryLimit`,
-it will read up to the upper limit first, but after that,
-when the displayed position advances, the old chunks will be released.
-Unlimited if `--memory-limit` is not specified.
+If you specify the upper limit of chunks with `--memory-limit` or `MemoryLimit`, it will read up to the upper limit first, but after that, when the displayed position advances, the old chunks will be released. Unlimited if `--memory-limit` is not specified.
 
 ```console
 cat /var/log/syslog | ov --memory-limit 10
@@ -1871,10 +1813,7 @@ For example, you can set different colors or styles for the Help and Log screens
 
 You can customize key bindings.
 
-The keys specified for an action replace its default keys; they are not added to
-the defaults. Other actions keep their default keys. If a key is assigned to
-more than one action, the key has an ambiguous action. The duplicate is
-reported in the Help screen and by `--help-key`.
+The keys specified for an action replace its default keys; they are not added to the defaults. Other actions keep their default keys. If a key is assigned to more than one action, the key has an ambiguous action. The duplicate is reported in the Help screen and by `--help-key`.
 
 [Example]
 
@@ -1888,8 +1827,7 @@ reported in the Help screen and by `--help-key`.
         - "Ctrl+p"
 ```
 
-For example, to use `j` and `k` for moving down and up, also remove the default
-`j` binding for the jump target action:
+For example, to use `j` and `k` for moving down and up, also remove the default `j` binding for the jump target action:
 
 ```yaml
 KeyBind:
@@ -1902,8 +1840,7 @@ KeyBind:
   jump_target: []
 ```
 
-To disable all default key bindings and enable only the bindings specified in
-the configuration file, set `DefaultKeyBind` to `disable`:
+To disable all default key bindings and enable only the bindings specified in the configuration file, set `DefaultKeyBind` to `disable`:
 
 ```yaml
 DefaultKeyBind: "disable"
